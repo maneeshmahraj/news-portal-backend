@@ -4,7 +4,7 @@ const app=express();
 
  const userSignUpRoutes = require('./routes/userSignUpRoutes')
  const userSignInRoutes = require('./routes/userSignInRoutes')
-
+const emailRoutes=require("./routes/emailRoutes")
 const cors = require('cors')
 const bodyparser = require('body-parser')
 require('dotenv').config();
@@ -19,7 +19,7 @@ app.use(express.json())
 
  app.use('/api/user', userSignUpRoutes);
  app.use('/api/user', userSignInRoutes);
-
+app.use("/api/email",emailRoutes)
 
 
 app.listen(port, ()=>{
